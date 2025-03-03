@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasklify</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <input type="text" id="task-input" placeholder="Tasks">
-    <button type="submit" id="add-button">Add</button>
+    <header>
+        <h1 class="title">Tasklify</h1>
+    </header>
+    <div class="input-container">
+        <input type="text" id="input" class="input" placeholder="Tasks" required>
+        <button type="submit" id="add-button">+</button>
+    </div>
 
-    <div id="task-list">
-        <ul>
+    <div id="list-container">
+        <ul id="list" class="list">
 
         </ul>
     </div>
 </body>
-    <script src="scripts/addTask.js"></script>
+    <script src="scripts/tasklify.js"></script>
 </html>

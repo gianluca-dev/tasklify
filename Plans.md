@@ -4,6 +4,7 @@
 - Delete tasks
 - Categorize tasks
 - Prioritize tasks
+- Assign tasks
 
 ## How to...
 - Save tasks in localStorage
