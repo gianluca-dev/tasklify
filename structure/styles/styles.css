@@ -9,14 +9,17 @@
 
 /*---Header---*/
 header {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 25px 0px;
+    text-align: center;
 }
 
 .title {
     width: max-content;
     position: relative;
+    margin-right: 50%;
 }
 
 .title::after {
@@ -31,11 +34,16 @@ header {
 }
 
 /*---Input---*/
+.input-container {
+    display: flex;
+    gap: 15px;
+}
+
 .input {
     width: 25%;
     height: 3em;
     border-radius: 10px;
-    margin: 0px 0px 25px 25px;
+    margin: 0px -4px 25px 25px;
     padding-left: 10px;
     border: 1px solid #ccc;
 }
@@ -50,15 +58,19 @@ header {
 }
 
 /*---Buttons---*/
-#add-button {
+.add-button-container {
     width: 2.5em;
     height: 2.5em;
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    margin-left: 10px;
-    font-size: 1em;
-    color: rgb(255, 255, 255);
     background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.add-button-container img {
+    width: 20px;
+    height: 20px;
 }
 
 .delete-button {
@@ -71,6 +83,46 @@ header {
     background: linear-gradient(to right, #006eff, #ff00ff);
 }
 
+.edit-button {
+    width: 4.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 10px;
+    margin-left: 2em;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.save-button {
+    width: 4.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 10px;
+    margin-left: 2em;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.edit-button {
+    width: 4.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 10px;
+    margin-left: 2em;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.edit-button-menu {
+    width: 4.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 10px;
+    margin: 25px 0px 0px 175px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
 /*---List---*/
 .list {
     list-style-type: none;
@@ -78,15 +130,69 @@ header {
 }
 
 .task-item {
-    display: list-item !important;
     padding: 10px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     margin-bottom: 5px;
 }
+
+/*---Edit Mode---*/
+.edit-button-invisible {
+    display: none;
+}
+
+.save-button-invisible {
+    display: none;
+}
+
+/*---Menu---*/
+.menu-container {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.menu-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu {
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    transition: 0.5s;
+    padding-top: 25px;
+    overflow-x: hidden;
+    background-color: #f7f7f7;
+}
+
+.close-container {
+    width: 2.5em;
+    height: 2.5em;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.close-container img {
+    width: 20px;
+    height: 20px;
+}
+
 /*---Responsive Design---*/
 @media only screen and (max-width: 600px) {
     .input {
-        width: 60%;
+        width: 75%;
     }
 }

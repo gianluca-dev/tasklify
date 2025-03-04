@@ -9,16 +9,26 @@
 <body>
     <header>
         <h1 class="title">Tasklify</h1>
+        <div class="menu-container" id="menu">
+            <img src="images/icons/menu_icon.png" alt="menu-icon">
+        </div>
     </header>
+    <div class="menu" id="sideMenu">
+            <div class="close-container" id="close">
+                <img src="images/icons/close_icon.png" alt="close-icon">
+            </div>
+            <div class="edit-button-container">
+                <button class="edit-button-menu" id="edit-button">Edit</button>
+            </div>
+    </div>
     <div class="input-container">
         <input type="text" id="input" class="input" placeholder="Tasks" required>
-        <button type="submit" id="add-button">+</button>
+        <div class="add-button-container" id="add-button">
+            <img src="images/icons/add_icon.png" alt="add-icon">
+        </div>
     </div>
-
     <div id="list-container">
-        <ul id="list" class="list">
-
-        </ul>
+        <ul id="list" class="list"></ul>
     </div>
 </body>
     <script src="scripts/tasklify.js"></script>
