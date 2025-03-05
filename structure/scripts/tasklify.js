@@ -1,4 +1,5 @@
 let tasks = JSON.parse(localStorage.getItem('Tasks')) || [];
+let editMode = false;
 
 document.addEventListener('DOMContentLoaded', () => {tasks.forEach(task => displayTask(task));});
 
@@ -31,7 +32,7 @@ function displayTask(value) {
     editButton.className = 'edit-button';
     editButton.textContent = 'Edit';
     editButton.classList.add('edit-button-invisible');
-    editButton.addEventListener('click', () => enterEditMode(newTask, value));
+    editButton.addEventListener('click', () => editTask(newTask, value));
     // create saveButton
     let saveButton = document.createElement('button');
     saveButton.type = 'button';
@@ -81,12 +82,10 @@ function openMenu() {
 }
 
 function closeMenu() {
-    console.log('test 1');
     document.getElementById('sideMenu').style.width = '0px';
 }
 
-document.getElementById('edit-button').addEventListener('click', enterEditMode);
-let editMode = false;
+document.getElementById('edit-button-menu').addEventListener('click', enterEditMode);
 
 function enterEditMode() {
     editMode = !editMode;
@@ -97,4 +96,38 @@ function enterEditMode() {
     } else {
         editButton.forEach(button => button.classList.add('edit-button-invisible'));
     }
+}
+
+function editTask(taskItem, oldValue) {
+    let taskToEdit = taskItem;
+    let editButton = taskToEdit.querySelector('button.edit-button');
+    let saveButton = taskToEdit.querySelector('button.save-button');
+    let editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.className = 'edit-input';
+    editInput.value = oldValue;
+    taskToEdit.appendChild(editInput);
+    editButton.classList.add('edit-button-invisible');
+    saveButton.classList.remove('save-button-invisible');
+}    
+
+function saveEditedTask(taskItem, oldValue) {
+    let editInput = taskItem.querySelector('input.edit-input');
+    let newValue = editInput.value.trim();
+    let deleteButton = taskItem.querySelector('button.delete-button');
+    let editButton = taskItem.querySelector('button.edit-button');
+    let saveButton = taskItem.querySelector('button.save-button');
+    if (newValue) {
+        tasks = tasks.map(task => task === oldValue ? newValue : task);
+        taskItem.textContent = newValue;
+        saveTask();
+        taskItem.appendChild(deleteButton);
+        taskItem.appendChild(editButton);
+        taskItem.appendChild(saveButton);
+        editButton.classList.remove('edit-button-invisible');
+        saveButton.classList.add('edit-button-invisible');
+    } else {
+        alert('The task must not be empty.');
+    }
+
 }
