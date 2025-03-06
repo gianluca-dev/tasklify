@@ -7,30 +7,23 @@
     font-family: 'Roboto';
 }
 
+body {
+    background-color: #242424;
+}
+
 /*---Header---*/
 header {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin: 25px 0px;
+    justify-content: flex-start;
+    padding: 25px 25px;
     text-align: center;
 }
 
 .title {
     width: max-content;
     position: relative;
-    margin-right: 50%;
-}
-
-.title::after {
-    content: '';
-    width: 100%;
-    height: 5px;
-    position: absolute;
-    bottom: -10px;
-    left: 0px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #006eff, #ff00ff);
+    color: #ffffff;
 }
 
 /*---Input---*/
@@ -118,7 +111,7 @@ header {
     height: 2.5em;
     border: none;
     border-radius: 10px;
-    margin: 25px 0px 0px 175px;
+    margin: 25px 0px 0px 25px;
     color: rgb(255, 255, 255);
     background: linear-gradient(to right, #006eff, #ff00ff);
 }
@@ -131,9 +124,10 @@ header {
 
 .task-item {
     padding: 10px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 2px solid #353535;
+    border-bottom: 2px solid #353535;
     margin-bottom: 5px;
+    color: #ffffff;
 }
 
 /*---Edit Mode---*/
@@ -153,6 +147,7 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-right: 1em;
     background: linear-gradient(to right, #006eff, #ff00ff);
 }
 
@@ -167,27 +162,77 @@ header {
     position: fixed;
     z-index: 1;
     top: 0px;
-    right: 0px;
+    left: 0px;
     transition: 0.5s;
     padding-top: 25px;
     overflow-x: hidden;
-    background-color: #f7f7f7;
+    background-color: #333333;
 }
 
 .close-container {
     width: 2.5em;
     height: 2.5em;
-    margin-left: 10px;
+    margin-left: 75%;
+    margin-top: -10px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background: linear-gradient(to right, #006eff, #ff00ff);
+}
+
+.close-container:hover {
+    background-color: #505050;
 }
 
 .close-container img {
     width: 20px;
     height: 20px;
+}
+
+/*---Edit Input---*/
+.edit-input {
+    width: 15em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    margin-left: 2em;
+}
+
+.edit-input::placeholder {
+    color: #ccc;
+}
+
+/*---Legals---*/
+.legals {
+    width: 75%;
+    margin: 25px 25px;
+    position: absolute;
+    bottom: 25px;
+}
+
+.legals ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.legals li {
+    list-style-type: none;
+    color: #aaaaaa;
+}
+
+.legals a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*---Copyright---*/
+.copyright p {
+    position: absolute;
+    bottom: 0px;
+    margin: 25px 25px;
+    color: #686868;
+    font-size: 10px;
 }
 
 /*---Responsive Design---*/

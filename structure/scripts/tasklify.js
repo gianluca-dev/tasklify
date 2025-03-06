@@ -106,6 +106,7 @@ function editTask(taskItem, oldValue) {
     editInput.type = 'text';
     editInput.className = 'edit-input';
     editInput.value = oldValue;
+    editInput.placeholder = 'New Task'
     taskToEdit.appendChild(editInput);
     editButton.classList.add('edit-button-invisible');
     saveButton.classList.remove('save-button-invisible');
